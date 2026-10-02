@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0e7ff 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-color: rgba(226, 232, 240, 0.8);
+  --error-color: #ef4444;
+  --error-bg: #fef2f2;
+  --success-color: #10b981;
+  --success-bg: #d1fae5;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Global Cards */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Forms */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, #4338ca 100%);
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.4);
+}
+
+.primary-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.primary-btn:disabled {
+  background: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Error */
+.error-message {
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-weight: 500;
+  border: 1px solid #fecaca;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Quiz Page specific styles */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.back-link:hover {
+  background-color: var(--bg-gradient);
+  transform: translateX(-4px);
+}
+
+.question-card {
+  background: white;
+  padding: 32px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.question-card h3 {
+  margin-top: 0;
+  color: var(--text-main);
+  line-height: 1.5;
+  font-size: 1.25rem;
+}
+
+.correct-bg {
+  background: var(--success-bg) !important;
+  border-color: #a7f3d0 !important;
+}
+
+.incorrect-bg {
+  background: var(--error-bg) !important;
+  border-color: #fecaca !important;
+}
+
+.options {
+  margin-top: 24px;
+}
+
+.option {
+  margin-bottom: 12px;
+  background: #f8fafc;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  background: #f1f5f9;
+  border-color: var(--border-color);
+}
+
+.option label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px 20px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.option input[type="radio"] {
+  margin-right: 16px;
+  transform: scale(1.4);
+  accent-color: var(--primary);
+}
+
+.feedback {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.results {
+  margin-top: 40px;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--primary) 0%, #4338ca 100%);
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.results h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+}

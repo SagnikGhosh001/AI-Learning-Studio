@@ -15,6 +15,13 @@ const formatTranscript = (transcript) => {
 };
 
 export const getTranscript = async (url) => {
-  const transcript = await fetchTranscript(url);
+  let transcript;
+  try {
+    // Try to get the English transcript explicitly first
+    transcript = await fetchTranscript(url, { lang: "en" });
+  } catch (err) {
+    // If English is not available, fallback to the default/auto-generated one
+    transcript = await fetchTranscript(url);
+  }
   return formatTranscript(transcript);
 };
